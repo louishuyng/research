@@ -53,6 +53,7 @@ Collected awesome tech in different stack
   - [Uploader](backend/scratch/uploader)
   - [Server Send Event](backend/scratch/server-send-events)
   - [LSP](backend/scratch/lsp-from-scratch)
+  - [Concurrency](backend/scratch/concurrency)
 - RPC
   - [trpc](backend/trpc)
 - API Documentation
