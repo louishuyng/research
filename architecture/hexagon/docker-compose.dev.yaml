@@ -1,0 +1,32 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./test_db:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+
+  app: 
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_DATABASE: coffee
+    depends_on:
+      - db
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./:/app
+
+volumes:
+  db_data:

@@ -1,0 +1,8 @@
+version: "2"
+sql:
+  - schema: "internal/adapters/framework/right/database/sql/schema"
+    queries: "internal/adapters/framework/right/database/sql/queries"
+    engine: "postgresql"
+    gen:
+      go:
+        out: "internal/adapters/framework/right/database/repository"
