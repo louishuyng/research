@@ -47,6 +47,7 @@ Collected awesome tech in different stack
   - [golang](backend/languages/golang)
   - [kotlin](backend/languages/kotlin)
 - [Design Patterns](backend/design-patterns)
+- [Concurrency](backend/concurrency)
 - Scratch
   - [Interpreter](backend/scratch/interpreter)
   - [Chat App](backend/scratch/chat-app)
