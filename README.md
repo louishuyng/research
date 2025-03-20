@@ -11,7 +11,6 @@ Collected awesome tech in different stack
 5. [Backend](#backend)
 6. [Data](#data)
 7. [Blockchain](#blockchain)
-8. [Frontend](#frontend)
 
 ## Base
 
@@ -59,12 +58,6 @@ Collected awesome tech in different stack
   - [trpc](backend/trpc)
 - API Documentation
   - [Smithy](backend/api-doc/smithy)
-- AI
-  - [openai](backend/openai)
-- Opensource
-  - [CoinFeA](backend/opensource/coinfea)
-- AWS
-  - [Step Functions](backend/aws/step-functions)
 
 ## Data
 
@@ -72,13 +65,3 @@ Collected awesome tech in different stack
 
 ## Blockchain
 - [Solana](blockchain/solana)
-
-## Frontend
-
-- HTMX
-  - [trpc](frontend/htmx)
-- RPC
-  - [trpc](frontend/trpc)
-- Svelte
-  - [resume](frontend/svetle-kit-resume)
-
