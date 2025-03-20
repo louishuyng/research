@@ -129,17 +129,17 @@ func generateUrls(quit <-chan int) <-chan string {
 const downloaders = 20
 
 func main() {
-	quit := make(chan int)
-	defer close(quit)
-	urls := generateUrls(quit)
+	quitWords := make(chan int)
+	defer close(quitWords)
+	urls := generateUrls(quitWords)
 	pages := make([]<-chan string, downloaders)
 	for i := 0; i < downloaders; i++ {
-		pages[i] = downloadPages(quit, urls)
+		pages[i] = downloadPages(quitWords, urls)
 	}
-	words := extractWords(quit, FanIn(quit, pages...))
-	wordsMulti := Broadcast(quit, words, 2)
-	longestResults := longestWords(quit, wordsMulti[0])
-	frequentResults := frequentWords(quit, wordsMulti[1])
+	words := Take(quitWords, 1000, extractWords(quitWords, FanIn(quitWords, pages...)))
+	wordsMulti := Broadcast(quitWords, words, 2)
+	longestResults := longestWords(quitWords, wordsMulti[0])
+	frequentResults := frequentWords(quitWords, wordsMulti[1])
 	fmt.Println("Longest Words:", <-longestResults)
 	fmt.Println("Most frequent Words:", <-frequentResults)
 }
