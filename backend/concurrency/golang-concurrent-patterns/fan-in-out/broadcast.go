@@ -1,4 +1,4 @@
-package main
+package faninout
 
 func Broadcast[K any](quit <-chan int, input <-chan K, n int) []chan K {
 	outputs := CreateAll[K](n)

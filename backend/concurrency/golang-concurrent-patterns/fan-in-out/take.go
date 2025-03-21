@@ -1,4 +1,4 @@
-package main
+package faninout
 
 func Take[K any](quit chan int, n int, input <-chan K) <-chan K {
 	output := make(chan K)
