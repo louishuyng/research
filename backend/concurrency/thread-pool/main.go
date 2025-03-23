@@ -43,6 +43,7 @@ func main() {
 	pool := NewPool(5)
 
 	for i := 0; i < 30; i++ {
+		fmt.Println(i)
 		job := func() {
 			time.Sleep(1 * time.Second)
 			fmt.Printf("Job completed\n")
